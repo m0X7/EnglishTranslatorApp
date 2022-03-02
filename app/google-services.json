@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "707070273944",
+    "project_id": "english-translator-app",
+    "storage_bucket": "english-translator-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707070273944:android:405a141145baf9830de3ed",
+        "android_client_info": {
+          "package_name": "com.mox.englishtranslatorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707070273944-6s3top8hdjk66mm41646ojskmr5q69j7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mox.englishtranslatorapp",
+            "certificate_hash": "4c55bc4ae1d33c9c05904a7429fd1fe70b930918"
+          }
+        },
+        {
+          "client_id": "707070273944-cbkq19ejcl4h991r1jmuhpm6s5ciq9dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjcncNxQcXye_ychEb_OKu9eu42wtkGdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707070273944-cbkq19ejcl4h991r1jmuhpm6s5ciq9dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
