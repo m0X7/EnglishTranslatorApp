@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
     String[] fromLanguage = {"Angielski", "Polski"};
     String[] toLanguage = {"Polski", "Angielski"};
     private static final int REQUEST_PERMISSION_CODE = 1;
-    int languageCode, fromLanguageCode, toLanguageCode = 0;
+    int languageCode;
+    String fromLanguageCode;
+    String toLanguageCode = String.valueOf(0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
                 translateTV.setText("");
                 if (sourceText.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this, "Proszę wpisać tekst do przetłumaczenia", Toast.LENGTH_SHORT).show();
-                } else if (fromLanguageCode == 0) {
+                } else if (fromLanguageCode.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Wybierz język", Toast.LENGTH_SHORT).show();
-                } else if (toLanguageCode == 0) {
+                } else if (toLanguageCode.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Proszę wybrać język do tłumaczenia", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -115,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
     private void translateText(int fromLanguageCode, int toLanguageCode, String source) {
         translateTV.setText("Pobieranie modelu, proszę czekać...");
         TranslatorOptions options = new TranslatorOptions.Builder()
-                .setSourceLanguage(fromLanguageCode)
-                .setTargetLanguage(toLanguageCode)
+                .setSourceLanguage(String.valueOf(fromLanguageCode))
+                .setTargetLanguage(String.valueOf(toLanguageCode))
                 .build();
         Translator translator = Translation.getClient(options);
         DownloadConditions conditions = new DownloadConditions.Builder().requireWifi().build();
@@ -151,8 +153,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private int getLanguageCode(String language) {
-        int languageCode = 0;
+    private String getLanguageCode(String language) {
+        String languageCode;
         switch (language) {
             case "Angielski":
                 languageCode = TranslateLanguage.ENGLISH;
@@ -161,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 languageCode = TranslateLanguage.POLISH;
                 break;
             default:
-                languageCode = 0;
+                languageCode = String.valueOf(0);
         }
         return languageCode;
     }
